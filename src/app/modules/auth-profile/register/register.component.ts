@@ -20,7 +20,9 @@ export class RegisterComponent implements OnInit {
     public router: Router) { }
 
   ngOnInit() {
-
+    if (this.authService.user && this.authService.token) {
+      this.router.navigate(["/"]);
+    }
   }
   register() {
 
